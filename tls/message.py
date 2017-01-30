@@ -8,8 +8,6 @@ import attr
 
 from construct import Container, ListContainer
 
-from six import BytesIO
-
 from tls import _constructs
 
 from tls._common import enums
