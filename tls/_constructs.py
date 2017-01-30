@@ -251,7 +251,8 @@ PreMasterSecret = Struct(
 
 ASN1Cert = Struct(
     "ASN1Cert",
-    PrefixedBytes("asn1_cert", UBInt24("asn1_cert_length"))
+    PrefixedBytes("asn1_cert", SizeWithin(UBInt24("length"), min_size=1,
+                                          max_size=2 ** 24 - 1))
 )
 
 # https://tools.ietf.org/html/rfc5246#section-7.4.2
